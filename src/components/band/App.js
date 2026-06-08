@@ -107,7 +107,7 @@ function Scene({ isMobile }) {
       timeStep={1 / 60}
     >
       {/* hanya desktop */}
-      {!isMobile && <Band isMobile={isMobile} />}
+      <Band isMobile={isMobile} />
     </Physics>
   );
 }
