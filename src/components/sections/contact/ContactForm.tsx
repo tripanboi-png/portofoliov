@@ -44,13 +44,13 @@ const socialLinks = [
     title: 'Instagram',
     user: '@instagram',
     icon: FaInstagram,
-    link: 'https://www.instagram.com/itsmeikky_12?igsh=ZHFpMTJ1bHQzeDAx',
+    link: 'https://www.instagram.com/_tripan/',
   },
   {
     title: 'Youtube',
     user: '@youtube',
     icon: FaYoutube,
-    link: 'https://youtube.com/@zettaajah?si=QRjJGD4zCQG8aIHX',
+    link: 'https://youtube.com',
   },
   {
     title: 'Github',
@@ -62,7 +62,7 @@ const socialLinks = [
     title: 'TikTok',
     user: '@tiktok',
     icon: FaTiktok,
-    link: 'https://www.tiktok.com/@itsme.ikky_?_r=1&_t=ZS-95yAYr5PHUb',
+    link: 'https://www.tiktok.com',
   },
 ]
 
