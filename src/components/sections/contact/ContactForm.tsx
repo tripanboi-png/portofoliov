@@ -56,7 +56,7 @@ const socialLinks = [
     title: 'Github',
     user: '@github',
     icon: FaGithub,
-    link: 'https://github.com/RifqiMuhammadAliya12',
+    link: 'https://github.com/tripanboi-png',
   },
   {
     title: 'TikTok',

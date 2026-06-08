@@ -172,9 +172,8 @@ export default function About() {
                   color: "var(--text-primary)",
                 }}
               >
-                <div>Rifqi</div>
-                <div>Muhammad</div>
-                <div>Aliya</div>
+                <div>Tri</div>
+                <div>Panboi</div>
               </div>
             </motion.div>
 
@@ -198,10 +197,10 @@ export default function About() {
                 maxWidth: isMobile ? "100%" : "490px",
               }}
             >
-              Fresh Graduate SMK Rekayasa Perangkat Lunak lulusan 2026 dengan
-              passion di bidang frontend development dan UI modern. Berfokus
-              pada pembuatan website clean, responsif, dan visual yang kuat
-              untuk menghadirkan pengalaman digital yang optimal.
+              Mahasiswa dan developer yang berfokus pada pengembangan web,
+              otomatisasi, dan solusi digital modern. Berpengalaman membangun
+              website, bot, dan sistem berbasis cloud dengan fokus pada
+              performa, keamanan, dan pengalaman pengguna yang baik.
             </motion.p>
 
             {/* QUOTE */}
