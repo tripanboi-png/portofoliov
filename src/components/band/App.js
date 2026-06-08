@@ -225,7 +225,7 @@ function Band({ isMobile, maxSpeed = 50, minSpeed = 10 }) {
 
   return (
     <>
-      <group position={isMobile ? [0, 1.5, 0] : [3, 4, 0]}>
+      <group position={isMobile ? [1.6, 3.3, 0] : [3, 4, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
         <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}><BallCollider args={[0.1]} /></RigidBody>
         <RigidBody position={[1, 0, 0]} ref={j2} {...segmentProps}><BallCollider args={[0.1]} /></RigidBody>
@@ -240,8 +240,8 @@ function Band({ isMobile, maxSpeed = 50, minSpeed = 10 }) {
           <CuboidCollider args={[0.8, 1.125, 0.01]} />
 
           <group
-            scale={2.25}
-            position={[0, -1.2, -0.05]}
+            scale={isMobile ? 0.65 : 2.25}
+            position={isMobile ? [0, -0.7, -0.05] : [0, -1.2, -0.05]}
             onPointerOver={() => canDrag && hover(true)}
             onPointerOut={() => canDrag && hover(false)}
             onPointerUp={(e) => {
