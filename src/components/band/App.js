@@ -156,6 +156,12 @@ function Band({ isMobile, maxSpeed = 50, minSpeed = 10 }) {
   useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]);
   useSphericalJoint(j3, card, [[0, 0, 0], [0, 1.45, 0]]);
 
+  useSphericalJoint(
+  j3,
+  card,
+  [[0, 0, 0], [0, isMobile ? 1.6 : 1.45, 0]]
+);
+
   useEffect(() => {
     if (hovered && canDrag) {
       document.body.style.cursor = dragged ? 'grabbing' : 'grab';
@@ -225,14 +231,14 @@ function Band({ isMobile, maxSpeed = 50, minSpeed = 10 }) {
 
   return (
     <>
-      <group position={isMobile ? [0.55, 1.65, 0] : [3, 4, 0]}>
+      <group position={isMobile ? [1.05, 4.5, 0] : [3, 4, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
         <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}><BallCollider args={[0.1]} /></RigidBody>
         <RigidBody position={[1, 0, 0]} ref={j2} {...segmentProps}><BallCollider args={[0.1]} /></RigidBody>
         <RigidBody position={[1.5, 0, 0]} ref={j3} {...segmentProps}><BallCollider args={[0.1]} /></RigidBody>
 
         <RigidBody
-          position={[2, 0, 0]}
+          position={isMobile ? [1.2, 1.8, 0] : [2, 0, 0]}
           ref={card}
           {...segmentProps}
           type={dragged ? 'kinematicPosition' : 'dynamic'}
@@ -240,8 +246,8 @@ function Band({ isMobile, maxSpeed = 50, minSpeed = 10 }) {
           <CuboidCollider args={[0.8, 1.125, 0.01]} />
 
           <group
-            scale={isMobile ? 0.65 : 2.25}
-            position={isMobile ? [0, -0.7, -0.05] : [0, -1.2, -0.05]}
+            scale={isMobile ? 0.9 : 2.25}
+            position={isMobile ? [0, 0.55, -0.05] : [0, -1.2, -0.05]}
             onPointerOver={() => canDrag && hover(true)}
             onPointerOut={() => canDrag && hover(false)}
             onPointerUp={(e) => {
