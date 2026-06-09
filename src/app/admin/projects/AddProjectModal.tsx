@@ -93,6 +93,21 @@ export default function AddProjectModal({
 
         uploadedUrls.push(data.publicUrl);
       }
+       
+     const techArray = tech
+      .split(",")
+      .map((item) => item.trim())
+      .filter(Boolean);
+
+
+      const featureArray = features
+      .split(",")
+      .map((item) => item.trim())
+      .filter(Boolean);
+
+      
+
+    
 
       const { data, error } = await supabase
         .from("projects")
@@ -102,8 +117,8 @@ export default function AddProjectModal({
             description: desc,
             live_url: live || null,
             github_url: github || null,
-            technologies: tech,
-            key_features: features,
+            technologies: techArray,
+            key_features: featureArray,
             image_url: uploadedUrls[0] || null,
             image_urls: uploadedUrls,
           },
@@ -111,8 +126,9 @@ export default function AddProjectModal({
         .select()
         .single();
 
-      if (error) {
-        showToast("Gagal simpan");
+      if (error) {{
+        console.log("SUPABASE ERROR:", error);
+        showToast(error.message);
         setLoading(false);
         return;
       }
@@ -129,7 +145,8 @@ export default function AddProjectModal({
       setPreviews([]);
 
       onClose();
-    } catch {
+    } catch (err) {
+      console.error("CATCH ERROR:", err);
       showToast("Terjadi error");
     }
 
