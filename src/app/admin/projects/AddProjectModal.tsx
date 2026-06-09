@@ -126,7 +126,7 @@ export default function AddProjectModal({
         .select()
         .single();
 
-      if (error) {{
+      if (error) {
         console.log("SUPABASE ERROR:", error);
         showToast(error.message);
         setLoading(false);
