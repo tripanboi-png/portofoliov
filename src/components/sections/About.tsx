@@ -313,16 +313,17 @@ export default function About() {
           </motion.div>
 
           {/* IMAGE */}
-          {!isMobile && (
+
             <motion.div
               variants={slideLeft}
               initial="hidden"
               whileInView="show"
               viewport={{ once: false }}
               style={{
-                width: "48%",
+                width: isMobile ? "100%" : "48%",
                 display: "flex",
-                justifyContent: "flex-end",
+                justifyContent: isMobile ? "center" : "flex-end",
+                marginTop: isMobile ? 24 : 0,
               }}
             >
               <div
@@ -330,7 +331,7 @@ export default function About() {
                   padding: 12,
                   borderRadius: "50%",
                   border: "1px solid var(--border)",
-                  transform: "translateX(-80px)",
+                  transform: isMobile ? "none" : "translateX(-80px)",
                 }}
               >
                 <img
@@ -346,7 +347,7 @@ export default function About() {
                 />
               </div>
             </motion.div>
-          )}
+        
         </div>
 
         {/* CARDS */}
