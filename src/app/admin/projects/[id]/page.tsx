@@ -121,17 +121,18 @@ export default function ProjectDetailPage() {
       </div>
     );
 
-  const tech = Array.isArray(form.technologies)
-    ? form.technologies.filter(
-        (t: string) => t.trim() !== ""
-      )
-    : [];
+   const tech = Array.isArray(project?.technologies)
+     ? project.technologies.filter(
+         (t: string) => t.trim() !== ""
+        )
+     :  [];
 
-  const features = Array.isArray(form.key_features)
-    ? form.key_features.filter(
-        (f: string) => f.trim() !== ""
-      )
-    : [];
+    const features = Array.isArray(project?.key_features)
+      ? project.key_features.filter(
+          (f: string) => f.trim() !== ""
+         )
+      : [];
+
     
 
     

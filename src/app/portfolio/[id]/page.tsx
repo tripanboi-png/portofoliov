@@ -54,13 +54,22 @@ export default function PortfolioDetailPage() {
     }
   }
 
-  const tech = (project?.technologies || '')
-    .split(',')
-    .filter((t: string) => t.trim() !== '')
+   const tech = Array.isArray(project?.technologies)
+     ? project.technologies.filter(
+         (t: string) => t.trim() !== ""
+       )
+     : [];
 
-  const features = (project?.key_features || '')
-    .split(',')
-    .filter((f: string) => f.trim() !== '')
+   const features = Array.isArray(project?.key_features)
+     ? project.key_features.filter(
+         (f: string) => f.trim() !== ""
+       )
+     : [];
+
+
+
+
+
 
   const galleryImages =
     project?.image_urls && Array.isArray(project.image_urls)

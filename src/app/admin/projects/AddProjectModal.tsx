@@ -85,14 +85,22 @@ export default function AddProjectModal({
             .from("projects")
             .upload(fileName, image);
 
-        if (uploadError) continue;
+        if (uploadError) {
+          console.error("UPLOAD ERROR:", uploadError);
+          showToast("Gagal upload gambar");
+          continue;
+        }
 
         const { data } = supabase.storage
           .from("projects")
           .getPublicUrl(fileName);
+           
+          console.log("PUBLIC URL:", data.publicUrl);
 
         uploadedUrls.push(data.publicUrl);
       }
+        console.log("uploadedUrls:", uploadedUrls);
+        
        
      const techArray = tech
       .split(",")
@@ -105,7 +113,7 @@ export default function AddProjectModal({
       .map((item) => item.trim())
       .filter(Boolean);
 
-      
+      console.log("FINAL uploadedUrls:", uploadedUrls);
 
     
 
