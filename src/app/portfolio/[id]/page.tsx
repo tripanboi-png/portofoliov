@@ -24,6 +24,8 @@ export default function PortfolioDetailPage() {
   const { id } = useParams()
   const router = useRouter()
 
+console.log("DETAIL PAGE NEW BUILD");
+
   const [project, setProject] = useState<any>({
     title: '',
     description: '',
